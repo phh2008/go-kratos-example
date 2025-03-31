@@ -1,0 +1,38 @@
+# Generated with protoc-gen-openapi
+# https://github.com/google/gnostic/tree/master/cmd/protoc-gen-openapi
+
+openapi: 3.0.3
+info:
+    title: Hello API
+    description: Hello 服务
+    version: 0.0.1
+paths:
+    /hello/test:
+        get:
+            tags:
+                - Hello
+            description: 测试
+            operationId: Hello_HelloTest
+            parameters:
+                - name: name
+                  in: query
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/api.helloworld.v1.HelloReply'
+components:
+    schemas:
+        api.helloworld.v1.HelloReply:
+            type: object
+            properties:
+                date:
+                    type: string
+                    format: date-time
+            description: 测试响应参数
+tags:
+    - name: Hello
