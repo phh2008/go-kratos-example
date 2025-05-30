@@ -13,7 +13,9 @@ import (
 
 var _ = biz.IBaseRepo(new(BaseRepo[any]))
 
-var dbKey = "txDb"
+type dbCtxKey struct{}
+
+var dbKey = dbCtxKey{}
 
 type BaseRepo[T any] struct {
     database *gorm.DB
